@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<report id="report_custom" 
+		string="Exportar Datos Subasta" 
+		model="subasta.dato" 
+		report_type="qweb-pdf" 
+		name="Subastas.report_custom_template"
+	/>
+
+	<template id="report_custom_template">
+		<div class="header">
+			<h1>Listado de productos Subastados</h1>
+
+		</div>
+		<div class="page">
+			<table class="table table-condensed table-bordered" style="width: 100%">
+				<thead>
+					<th class="text-center">Producto</th>
+					<th class="text-center">Precio alcanzado</th>
+					<th class="text-center">Vendedor</th>
+					<th class="text-center">Comprador</th>
+					<th class="text-center">Subastador</th>
+					<th class="text-center">Lugar</th>
+				</thead>
+				<tbody>
+					<t t-foreach="docs" t-as="doc">
+						<td>
+							<span t-esc="doc['producto']" />
+						</td>
+						<td>
+							<span t-esc="doc['precioCom']" />
+						</td>
+						<td>
+							<span t-esc="doc['vendedor']" />
+						</td>
+						<td>
+							<span t-esc="doc['comprador']" />
+						</td>
+						<td>
+							<span t-esc="doc['subastador']" />
+						</td>
+						<td>
+							<span t-esc="doc['lugar']" />
+						</td>
+					</t>
+				</tbody>
+			</table>
+		</div>
+		<div class="footer">
+			<small>David Gallardo Rueda</small>
+		</div>
+	</template>
+</odoo>

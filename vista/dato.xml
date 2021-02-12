@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<data>
+		<!-- Añadimos los campos de Contacto -->
+		<act_window id="Producto_dato_action" name="dato" res_model="producto.dato" />
+
+		<record id="Producto_dato_tree" model="ir.ui.view">
+			<field name="name">Lista datos</field>
+			<field name="model">producto.dato</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="codigo" />
+					<field name="nombre" />
+					<field name="foto" />
+					<field name="marca" />
+					<field name="precio" />
+					<field name="tamano" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="Producto_dato_view_search" model="ir.ui.view">
+			<field name="name">Buscar datos2x</field>
+			<field name="model">producto.dato</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="codigo" />
+					<field name="nombre" />
+					<field name="foto" />
+					<field name="marca" />
+					<field name="precio" />
+					<field name="tamano" />
+				</search>
+			</field>
+		</record>
+
+		<act_window id="Persona_dato_action" name="dato" res_model="persona.dato" />
+
+		<record id="Persona_dato_tree" model="ir.ui.view">
+			<field name="name">Lista datos</field>
+			<field name="model">persona.dato</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="nombre" />
+					<field name="apellido" />
+					<field name="dni" />
+					<field name="edad" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="Persona_dato_view_search" model="ir.ui.view">
+			<field name="name">Buscar datos2x</field>
+			<field name="model">persona.dato</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="nombre" />
+					<field name="apellido" />
+					<field name="dni" />
+					<field name="edad" />
+				</search>
+			</field>
+		</record>
+
+		<act_window id="Lugar_dato_action" name="dato" res_model="lugar.dato" />
+
+		<record id="Lugar_dato_tree" model="ir.ui.view">
+			<field name="name">Lista datos</field>
+			<field name="model">lugar.dato</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="pais" />
+					<field name="provincia" />
+					<field name="municipio" />
+					<field name="calle" />
+					<field name="fecha" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="Lugar_dato_view_search" model="ir.ui.view">
+			<field name="name">Buscar datos2x</field>
+			<field name="model">lugar.dato</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="pais" />
+					<field name="provincia" />
+					<field name="municipio" />
+					<field name="calle" />
+					<field name="fecha" />
+				</search>
+			</field>
+		</record>
+
+		<act_window id="Subasta_dato_action" name="dato" res_model="subasta.dato" />
+
+		<record id="Subasta_dato_tree" model="ir.ui.view">
+			<field name="name">Lista datos</field>
+			<field name="model">subasta.dato</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="producto" />
+					<field name="precioCom" />
+					<field name="vendedor" />
+					<field name="comprador" />
+					<field name="subastador" />
+					<field name="lugar" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="Subasta_dato_view_search" model="ir.ui.view">
+			<field name="name">Buscar datos2x</field>
+			<field name="model">subasta.dato</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="producto" />
+					<field name="precioCom" />
+					<field name="vendedor" />
+					<field name="comprador" />
+					<field name="subastador" />
+					<field name="lugar" />
+				</search>
+			</field>
+		</record>
+
+
+
+		<menuitem name="Subastas" id="menu_dato" sequence="10" />
+		<!--<menuitem name="Inicio" id="menu_inicio" parent="menu_dato" sequence="10"/>-->
+		<menuitem name="Productos" id="menu_productos" parent="menu_dato" sequence="10"/>
+			<menuitem name="Producto" id="menu_produc" action="Producto_dato_action" parent="menu_productos" sequence="10" />
+
+		<menuitem name="Personas" id="menu_personas" parent="menu_dato" sequence="10"/>
+			<menuitem name="Persona" id="menu_perso" action="Persona_dato_action" parent="menu_personas" sequence="10" />
+
+		<menuitem name="Ubicacion" id="menu_lugar" parent="menu_dato" sequence="10"/>
+			<menuitem name="Lugar" id="menu_lug" action="Lugar_dato_action" parent="menu_lugar" sequence="10" />
+
+		<menuitem name="Ubicacion" id="menu_subasta" parent="menu_dato" sequence="10"/>
+			<menuitem name="Subasta" id="menu_sub" action="Subasta_dato_action" parent="menu_subasta" sequence="10" />
+	</data>
+</odoo>
